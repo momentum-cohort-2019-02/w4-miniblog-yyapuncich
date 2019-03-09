@@ -9,6 +9,7 @@ prospector = "*"
 [packages]
 django = "*"
 pillow = "*"
+tree = "*"
 
 [requires]
 python_version = "3.7"

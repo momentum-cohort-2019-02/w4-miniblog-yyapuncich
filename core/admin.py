@@ -2,10 +2,13 @@ from django.contrib import admin
 from core.models import Blogger, BlogPost, Topic
 
 # Register your models here.
+class BlogPostInline(admin.TabularInline):
+    model = BlogPost
 
 @admin.register(Blogger)
 class BloggerAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name', 'profile_pic')
+    inlines = [BlogPostInline]
 
 @admin.register(BlogPost)
 class BlogPostAdmin(admin.ModelAdmin):
@@ -13,4 +16,4 @@ class BlogPostAdmin(admin.ModelAdmin):
 
 @admin.register(Topic)
 class TopicAdmin(admin.ModelAdmin):
-    list_display = ()
+    pass
