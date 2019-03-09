@@ -46,6 +46,18 @@ class BlogPost(models.Model):
         """Returns url for accessing specific blog post"""
         return reverse("blog-post-detail", args=[str(self.id)])
 
+    def display_blog_entry(self):
+        """Create a string for the Genre. This is required to display genre in Admin."""
+        return self.blog_entry[:75] + "..."
+
+    display_blog_entry.short_description = 'Blog Post'
+
+    def display_topic(self):
+        """Returns topic for display on list of blog entries in admin"""
+        return ', '.join(topic.name for topic in self.topic.all()[:3])
+
+    display_topic.short_description = "Topics"
+
     def __str__(self):
         return self.blog_entry
 
