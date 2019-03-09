@@ -21,6 +21,12 @@ class Blogger(models.Model):
     def __str__(self):
         """String for representing the Blogger model object"""
         return self.name
+
+# Photos used for profiles: 
+# Photo by hannah grace on Unsplash(lady with sunglasses and pink jacket)
+# Photo by Mohammad Faruque on Unsplash(lady with tattoos on back)
+# Photo by Sai De Silva on Unsplash(lady with daughter)
+# Photo by Seth Doyle on Unsplash(guy with glasses)
     
 class Topic(models.Model):
     name = models.CharField(max_length=50, help_text='Enter the topic for your blog post')
@@ -31,14 +37,14 @@ class Topic(models.Model):
 
 class BlogPost(models.Model):
     title = models.CharField(max_length=50, help_text='Enter the title for your post.')
-    blog_entry = models.TextField('Thoughts!', )
+    blog_entry = models.TextField('Thoughts!')
     blogger = models.ForeignKey(Blogger,  on_delete=models.SET_NULL, null=True)
     topic = models.ManyToManyField(Topic, help_text='Select a topic.')
+    date_created = models.DateTimeField('post date')
 
     def get_absolute_url(self):
         """Returns url for accessing specific blog post"""
         return reverse("blog-post-detail", args=[str(self.id)])
-    
 
     def __str__(self):
         return self.blog_entry
