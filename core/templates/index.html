@@ -1,3 +1,21 @@
 <!DOCTYPE html>
 
 {% extends "base_generic.html" %}
+
+{% block content %}
+    <p class="intro">Welcome to the FFS-DB... The Fun Fun Super Durham Blog. We are a group of Durhamites that love to post our opinions on various topics. Hope you like our stuff!</p>
+
+    <h2 class="recent-header">Recent Posts Below</h2>
+    {% if blogpost_list %}
+    <ul class="blog-list">
+    {% for blog_entry in blogpost_list %}
+    <li class="blog-list-item">
+        <a href="{{ blogpost.getabsolute_url }}">{{ blogpost.title }}</a>
+        <p>{{ blogpost.display_blog_entry }}{{ blogpost.display_topic }}</p>
+    </li>
+    {% endfor %}
+    </ul>
+    {% else %}
+        <p>Writers have had nothing to say I guess.</p>
+    {% endif %}
+{% endblock %}

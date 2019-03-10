@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 from datetime import date, time
 from PIL import Image
+import uuid
 
 # Create your models here.
 
@@ -61,4 +62,18 @@ class BlogPost(models.Model):
     def __str__(self):
         return self.blog_entry
 
-# class Comment(models.Model):
+class Comment(models.Model):
+    """Model representing individual comments by users who are authenticated with logins"""
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this particular comment across site.')
+    blog_entry = models.ForeignKey(BlogPost, on_delete=models.SET_NULL, null=True)
+    title = models.CharField(max_length=100, help_text='Title for your comments')
+    date_posted = models.DateTimeField('commented on', auto_now=True)
+
+    comment = models.TextField(max_length=200, help_text='Enter your lovely things to say!')
+
+    class Meta:
+        ordering = ['date_posted']
+
+    def __str__(self):
+        """String for representing the Comment Model object."""
+        return f'{ self.title }{{ self.comment|truncatewords:15 }}'

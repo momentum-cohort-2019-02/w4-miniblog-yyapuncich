@@ -1,4 +1,60 @@
 * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: auto;
+    padding: 0;
+    border: 1px dotted black;
 }
 
+.page-header {
+    text-align: center;
+    padding: 2rem 0 2rem 0;
+}
+
+.container-fluid {
+    display: flex;
+    justify-items: auto;
+    max-width: 1200px;
+}
+
+.sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    /* margin: 1rem; */
+}
+
+.sidebar-nav {
+    display: flex;
+    list-style-type: none;
+}
+
+.sidebar-nav li {
+    padding: 1rem;
+}
+
+.main-content {
+    /* display: flex; */
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem 3rem 0 3rem;
+    /* width: 70%; */
+}
+
+.intro {
+    text-align: center;
+    padding: 1rem 0 1rem 0;
+}
+
+.recent-header {
+    text-align: left;
+    padding: 1rem 0 1rem 0;
+    text-decoration-line: underline;
+}
+
+.blog-list {
+    list-style-type: decimal;
+}
+
+.blog-list-item {
+    font-family: 'Courier New', Courier, monospace;
+}
