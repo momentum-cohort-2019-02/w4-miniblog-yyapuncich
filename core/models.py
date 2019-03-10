@@ -11,6 +11,7 @@ class Blogger(models.Model):
     """Defines a Blogpost author"""
     name = models.CharField(max_length=50, help_text='Enter your name as you would like it displayed.')
     profile_pic = models.ImageField('Photo')
+    bio = models.TextField('writer bio', max_length=1200, null=True)
 
     class Meta:
         ordering = ['name']

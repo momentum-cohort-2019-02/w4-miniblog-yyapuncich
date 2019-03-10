@@ -1,3 +1,10 @@
 <!DOCTYPE html>
 
 {% extends "base_generic.html" %}
+
+{% block content %}
+<h1 class="page-header"><strong>My name:</strong> {{ blogger.name }}</h1>
+<p class="blogger-pic"><strong>My look:</strong> {{ blogger.profile_pic }}</p>
+<p class="blogger-bio"><strong>My story:</strong> {{ blogger.bio }}</p>
+
+{% endblock %}
