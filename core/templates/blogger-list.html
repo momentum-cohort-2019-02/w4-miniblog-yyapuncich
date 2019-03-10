@@ -1,3 +1,20 @@
 <!DOCTYPE html>
 
 {% extends "base_generic.html" %}
+
+{% block content %}
+    <p class="blogger-list-intro">These are great contributing writers. Wonderful people who like to write and blog and write and blog etc.</p>
+
+    <h2 class="blogger-list-header">Writers: </h2>
+    {% if blogger_list %}
+    <ul class="blogger-list">
+    {% for blogger in blogger_list %}
+    <li class="blogger-list-item">
+        <a href="{{ blogger.get_absolute_url }}">{{ blogger.name }}</a>{{ blogger.profile_pic }}
+    </li>
+    {% endfor %}
+    </ul>
+    {% else %}
+        <p>We have no writers for this blog?</p>
+    {% endif %}
+{% endblock %}

@@ -30,6 +30,7 @@ def blogpostdetail(request):
 
 class BlogPostView(generic.ListView):
     model = BlogPost
+    paginate_by = 6
     template_name = 'index.html'
 
 class BlogPostDetailView(generic.DetailView):

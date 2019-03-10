@@ -17,7 +17,7 @@ class Blogger(models.Model):
 
     def get_absolute_url(self):
         """returns url to access particular blogger instance"""
-        return reverse("blogger-detail", args=[str(self.id)])
+        return reverse('blogger-detail', args=[str(self.id)])
 
     def __str__(self):
         """String for representing the Blogger model object"""
@@ -45,7 +45,7 @@ class BlogPost(models.Model):
 
     def get_absolute_url(self):
         """Returns url for accessing specific blog post"""
-        return reverse("blogpost-detail", args=[str(self.id)])
+        return reverse('blogpost-detail', args=[str(self.id)])
 
     def display_blog_entry(self):
         """Create a string for the Blog entry. This is required to display blog snippet in Admin."""
