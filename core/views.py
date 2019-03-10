@@ -24,7 +24,7 @@ def bloggerlist(request):
     """View function for list of all writers"""
     return render(request, 'blogger-list.html')
 
-def blogpost(request):
+def blogpostdetail(request):
     """View function for detail view of individual post"""
     return render(request, 'blogpost-detail.html')
 
@@ -34,4 +34,12 @@ class BlogPostView(generic.ListView):
 
 class BlogPostDetailView(generic.DetailView):
     model = BlogPost
-    template_name = 'blogpost-detail'
+    template_name = 'blogpost-detail.html'
+
+class BloggerListView(generic.ListView):
+    model = Blogger
+    template_name = 'blogger-list.html'
+
+class BloggerDetailView(generic.DetailView):
+    model = Blogger
+    template_name = 'blogger-detail.html'

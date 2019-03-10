@@ -10,8 +10,8 @@
     <ul class="blog-list">
     {% for blog_entry in blogpost_list %}
     <li class="blog-list-item">
-        <a href="{{ blogpost.getabsolute_url }}">{{ blogpost.title }}</a>
-        <p>{{ blogpost.display_blog_entry }}{{ blogpost.display_topic }}</p>
+        <a href="{{ blog_entry.get_absolute_url }}">{{ blog_entry.title }}</a>
+        {{ blog_entry.display_blog_entry }}{{ blog_entry.display_topic }}
     </li>
     {% endfor %}
     </ul>

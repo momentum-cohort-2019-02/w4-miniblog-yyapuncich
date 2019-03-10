@@ -45,18 +45,20 @@ class BlogPost(models.Model):
 
     def get_absolute_url(self):
         """Returns url for accessing specific blog post"""
-        return reverse("blog-post-detail", args=[str(self.id)])
+        return reverse("blogpost-detail", args=[str(self.id)])
 
     def display_blog_entry(self):
-        """Create a string for the Genre. This is required to display genre in Admin."""
+        """Create a string for the Blog entry. This is required to display blog snippet in Admin."""
         return self.blog_entry[:75] + "..."
-
-    display_blog_entry.short_description = 'Blog Post'
 
     def display_topic(self):
         """Returns topic for display on list of blog entries in admin"""
         return ', '.join(topic.name for topic in self.topic.all()[:3])
 
+    class Meta:
+        ordering = ['date_created']
+
+    display_blog_entry.short_description = 'Blog Post'
     display_topic.short_description = "Topics"
 
     def __str__(self):
@@ -68,7 +70,6 @@ class Comment(models.Model):
     blog_entry = models.ForeignKey(BlogPost, on_delete=models.SET_NULL, null=True)
     title = models.CharField(max_length=100, help_text='Title for your comments')
     date_posted = models.DateTimeField('commented on', auto_now=True)
-
     comment = models.TextField(max_length=200, help_text='Enter your lovely things to say!')
 
     class Meta:
