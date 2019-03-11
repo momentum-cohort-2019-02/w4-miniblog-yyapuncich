@@ -3,8 +3,11 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<h1 class="page-header"><strong>My name:</strong> {{ blogger.name }}</h1>
-<p class="blogger-pic"><strong>My look:</strong> {{ blogger.profile_pic }}</p>
+<h1 class="page-header"><strong>Call me</strong> {{ blogger.name }}</h1>
+<p>
+    <br>
+    <img class="blogger-pic" src="{{ blogger.profile_pic.url }}"></p>
+    <br>
 <p class="blogger-bio"><strong>My story:</strong> {{ blogger.bio }}</p>
 
 {% endblock %}

@@ -10,7 +10,9 @@
     <ul class="blogger-list">
     {% for blogger in blogger_list %}
     <li class="blogger-list-item">
-        <a href="{{ blogger.get_absolute_url }}">{{ blogger.name }}</a>{{ blogger.profile_pic }}
+        <a href="{{ blogger.get_absolute_url }}">{{ blogger.name }}</a>
+        <br>
+        <img class="blogger-thumbnail" src="{{ blogger.profile_pic.url }}">
     </li>
     {% endfor %}
     </ul>

@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+{% if form.errors %}
+    <p>Your username and password didnt' match. Please try again.</p>
+{% endif %}

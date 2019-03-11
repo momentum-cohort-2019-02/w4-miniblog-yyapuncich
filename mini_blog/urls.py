@@ -23,6 +23,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('core/', include('core.urls')),
     path('', RedirectView.as_view(url='/core/', permanent=True)),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# Thanks to Max Goodridge for youtube video to help me figure out image adding...
+# https://www.youtube.com/watch?v=tT2JOpfelSg

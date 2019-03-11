@@ -5,8 +5,16 @@
     /* border: 1px dotted black; */
 }
 
-.page-header {
+.main-page-header {
+    font-size: 2.5rem;;
     text-align: center;
+    padding: 3rem 0 2rem 0;
+}
+
+.page-header {
+    text-align: left;
+    text-decoration-line: underline;
+    line-height: 2rem;
     padding: 2rem 0 2rem 0;
 }
 
@@ -47,18 +55,6 @@
     line-height: 1.5rem;
 }
 
-.main-page-header {
-    font-size: 2.5rem;;
-    text-align: center;
-    padding: 2rem 0 2rem 0;
-}
-
-.page-header {
-    text-align: left;
-    text-decoration-line: underline;
-    line-height: 1.75rem;
-}
-
 .blog-list {
     list-style-type: decimal;
     line-height: 1.5rem;
@@ -71,10 +67,33 @@
     padding: 1.5rem;
 }
 
+.blogger-list {
+    list-style-type: none;
+}
+
+.blogger-list-item {
+}
+
+.blogger-thumbnail {
+    width: 200px;
+    border: 5px dotted lightgray;
+    padding: 1rem;
+    margin: 1rem 0 1rem 0;
+}
+
+.blogger-pic {
+    min-width: 250px;
+    max-width: 400px;
+    border: 6px dotted lightgray;
+    padding: 1rem;
+    margin: 1rem 0 1rem 0;
+}
+
 .pagination {
     padding: 2rem;
 }
 
 .page-footer {
     padding: 3rem 2rem 2rem 2rem;
+    border-top: 2px darkgray;
 }
